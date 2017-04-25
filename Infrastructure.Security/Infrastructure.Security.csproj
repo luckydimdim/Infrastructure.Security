@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Authors>Yamal</Authors>
+    <Company>Yamal</Company>
+    <Product>CMAS</Product>
+    <Description>Infrastructure security</Description>
+    <PackageId>Cmas.Infrastructure.Security</PackageId>
+    <AssemblyName>Cmas.Infrastructure.Security</AssemblyName>
+    <RootNamespace>Cmas.Infrastructure.Security</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
