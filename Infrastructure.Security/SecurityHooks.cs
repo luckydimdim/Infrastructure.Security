@@ -23,26 +23,10 @@ namespace Cmas.Infrastructure.Security
             else
                 return null;
         }
-
-
+         
         public static Response RequiresRoles(NancyContext ctx, Role[] roles)
-        {
-            if (roles.Length == 0)
-                throw new ArgumentException("roles");
-
-            var claims = new Predicate<Claim>[roles.Length];
-
-            int i = 0;
-            foreach (var role in roles)
-            {
-                 
-                claims[i++] = new Predicate<Claim>((p) =>
-                {
-                    return p.Type == ClaimTypes.Role.ToString() && p.Value == role.ToString().ToUpper();
-                });
-            }
-
-            if (!ctx.CurrentUser.HasClaims(claims))
+        { 
+            if (!ctx.CurrentUser.HasRoles(roles))
                 throw new ForbiddenErrorException();
             else
                 return null;
