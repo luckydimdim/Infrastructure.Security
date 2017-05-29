@@ -15,6 +15,11 @@
         /// <summary>
         /// Подрядчик
         /// </summary>
-        Contractor
+        Contractor,
+
+        /// <summary>
+        /// Администратор
+        /// </summary>
+        Administration
     }
 }
