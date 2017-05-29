@@ -20,6 +20,6 @@
         /// <summary>
         /// Администратор
         /// </summary>
-        Administration
+        Administrator
     }
 }
