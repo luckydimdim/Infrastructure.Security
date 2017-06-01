@@ -25,10 +25,10 @@ namespace Cmas.Infrastructure.Security
             module.AddBeforeHookOrExecute(ctx => SecurityHooks.RequiresClaims(ctx, requiredClaims), "Requires Claims");
         }
 
-        public static void RequiresRoles(this INancyModule module, Role[] requiredRoles)
+        public static void RequiresAnyRole(this INancyModule module, Role[] requiredRoles)
         {
             module.AddBeforeHookOrExecute(SecurityHooks.RequiresAuthentication, "Requires Authentication");
-            module.AddBeforeHookOrExecute(ctx => SecurityHooks.RequiresRoles(ctx, requiredRoles), "Requires Claims");
+            module.AddBeforeHookOrExecute(ctx => SecurityHooks.RequiresAnyRole(ctx, requiredRoles), "Requires Claims");
         }
 
     }

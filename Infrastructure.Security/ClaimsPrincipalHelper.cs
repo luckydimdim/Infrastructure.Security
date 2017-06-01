@@ -6,7 +6,7 @@ namespace Cmas.Infrastructure.Security
 {
     public static class ClaimsPrincipalHelper
     {
-        public static bool HasRoles(this ClaimsPrincipal claimsPrincipal, Role[] roles)
+        public static bool HasAnyRole(this ClaimsPrincipal claimsPrincipal, Role[] roles)
         {
             if (roles.Length == 0)
                 throw new ArgumentException("roles");
@@ -23,9 +23,7 @@ namespace Cmas.Infrastructure.Security
                 });
             }
 
-            return claimsPrincipal.HasClaims(claims);
-
-
+            return claimsPrincipal.HasAnyClaim(claims);
         }
     }
 }

@@ -24,9 +24,9 @@ namespace Cmas.Infrastructure.Security
                 return null;
         }
          
-        public static Response RequiresRoles(NancyContext ctx, Role[] roles)
+        public static Response RequiresAnyRole(NancyContext ctx, Role[] roles)
         { 
-            if (!ctx.CurrentUser.HasRoles(roles))
+            if (!ctx.CurrentUser.HasAnyRole(roles))
                 throw new ForbiddenErrorException();
             else
                 return null;
