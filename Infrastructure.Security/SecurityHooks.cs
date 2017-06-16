@@ -1,5 +1,6 @@
 ﻿using Nancy;
-using System; 
+using System;
+using System.Linq;
 using Cmas.Infrastructure.ErrorHandler;
 using Nancy.Security;
 using System.Security.Claims;
@@ -10,7 +11,7 @@ namespace Cmas.Infrastructure.Security
     {
         public static Response RequiresAuthentication(NancyContext ctx)
         {
-            if (!ctx.CurrentUser.IsAuthenticated())
+            if (!ctx.CurrentUser.IsAuthenticated() || !ctx.CurrentUser.Claims.Any(c=>c.Type == ClaimTypes.Role))
                 throw new UnauthorizedErrorException();
             else
                 return null;
