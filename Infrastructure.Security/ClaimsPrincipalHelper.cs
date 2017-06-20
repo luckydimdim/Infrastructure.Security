@@ -25,5 +25,10 @@ namespace Cmas.Infrastructure.Security
 
             return claimsPrincipal.HasAnyClaim(claims);
         }
+
+        public static bool HasRole(this ClaimsPrincipal claimsPrincipal, Role role)
+        {
+            return claimsPrincipal.HasClaim(claim => (claim.Type == ClaimTypes.Role.ToString() && claim.Value == role.ToString().ToUpper()));
+        }
     }
 }
